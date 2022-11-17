@@ -7,8 +7,14 @@ import Light from "../pages/light";
 import FutureCity from "../pages/futureCity";
 import Website3D from "../pages/3dSite";
 import Miami from "../pages/miami";
+import usePreloader from './../hook/usePreloader/index';
+import Preloader from './../utils/preloader/index';
 
 const RouterComponent = () => {
+    const {isLoading} = usePreloader()
+    if (isLoading) {
+        return <Preloader/>
+    }
     return (
         <>
             <Route exact path={'/'} render={() => <NavBar/>}/>
