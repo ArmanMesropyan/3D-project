@@ -89,9 +89,7 @@ const Miami = () => {
             }),
             []
         );
-        const handleClickOpen = (index) => {
-            setOpenedIndex(index)
-        }
+      
         return (
             <div className='L-main-miami'>
                 <div className="L-description">
@@ -108,10 +106,7 @@ const Miami = () => {
                                 <SwiperSlide key={slide.img} virtualIndex={index} className='L-slider-item'>
                                     <div
                                         className={openedIndex === slide.id && opened ? "slider-image-slide opened" : "slider-image-slide"}
-                                        onClick={() => {
-                                            handleClickOpen(slide.id)
-                                            setOpened(!opened)
-                                        }}>
+                                        >
                                         <div
                                             className="slider-image-slide-inner"
                                             data-swiper-parallax={slide.id % 2 == 0 ? "30%" : "20%"}
